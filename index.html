@@ -6,26 +6,27 @@
 <meta name="robots" content="noindex, nofollow">
 <title>How I launch a community</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    --deep:#003049; --deep-2:#0a4260; --deep-rule:#1f5674;
+    --deep:#ffffff; --deep-2:#f4f9fb; --deep-rule:#e3e8eb;
     --light:#f4f9fb; --white:#ffffff; --light-rule:#d6e3ea;
     --ink:#0b1f2a; --ink-2:#33454f; --ink-3:#5d6f7a;
-    --on-deep:#f4f9fb; --on-deep-2:#c6dbe6; --on-deep-3:#8fb0c3;
-    --aqua:#48cae4; --ocean:#0077b6; --citrus:#ffb703;
-    --display:"Sora","Helvetica Neue",Arial,sans-serif;
-    --body:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
+    --on-deep:#0b1f2a; --on-deep-2:#33454f; --on-deep-3:#5d6f7a;
+    --aqua:#48cae4; --ocean:#0077b6; --citrus:#ffb703; --coral:#ff6b4a;
+    --navy:#003049; --navy-2:#0a4260; --navy-rule:#1f5674; --on-navy:#f4f9fb; --on-navy-2:#c6dbe6; --on-navy-3:#8fb0c3;
+    --display:"Manrope","Helvetica Neue",Arial,sans-serif;
+    --body:"Inter","Helvetica Neue",Arial,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
   *{box-sizing:border-box}
   html{color-scheme:light}
-  body{margin:0;background:var(--deep);color:var(--on-deep);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--deep);color:var(--on-deep);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit}
   p{margin:0}
   h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;text-wrap:balance}
-  h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:700;letter-spacing:-.01em}
-  h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:700}
+  h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+  h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.01em}
   h3{font-size:1.2rem;font-weight:600}
   .wrap{max-width:64rem;margin:0 auto;padding:0 1.25rem}
   .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
@@ -33,7 +34,7 @@
   /* bands */
   .band{padding:3.5rem 0}
   .band.deep{background:var(--deep);color:var(--on-deep)}
-  .band.deep .mono{color:var(--aqua)}
+  .band.deep .mono{color:var(--ocean)}
   .band.deep p{color:var(--on-deep-2)}
   .band.deep .rule{border-color:var(--deep-rule)}
   .band.light{background:var(--light);color:var(--ink)}
@@ -48,9 +49,9 @@
   /* header */
   .top{padding:1.5rem 0 3rem}
   .topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-bottom:1.5rem;border-bottom:1px solid var(--deep-rule)}
-  .logo{height:34px;width:auto;display:block;background:#fff;padding:6px 10px;border-radius:4px}
+  .logo{height:34px;width:auto;display:block}
   .meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--on-deep-3);display:flex;gap:1.25rem;flex-wrap:wrap}
-  .meta a{color:var(--aqua);text-decoration:none;border-bottom:1px solid currentColor}
+  .meta a{color:var(--ocean);text-decoration:none;border-bottom:1px solid currentColor}
   .title{display:flex;flex-direction:column;gap:1rem;padding-top:2.5rem;max-width:44rem}
   .lede{font-size:1.3rem;line-height:1.45;color:var(--on-deep-2)}
   .prose{max-width:40em;display:flex;flex-direction:column;gap:1rem}
@@ -60,28 +61,41 @@
   .phase:first-of-type{border-top:0;padding-top:0}
   @media(min-width:860px){.phase{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3rem;align-items:start}}
   .phase .text{display:flex;flex-direction:column;gap:1rem}
-  .phase h3{font-size:1.5rem;font-weight:700;color:var(--on-deep)}
+  .phase h3{font-size:1.5rem;font-weight:800;color:var(--on-deep)}
   .kv{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.25rem;font-size:1rem;margin-top:.5rem;padding-top:1rem;border-top:1px solid var(--deep-rule)}
   .kv dt{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-3);padding-top:.3rem}
   .kv dd{margin:0;color:var(--on-deep-2)}
   figure{margin:0;display:flex;flex-direction:column;gap:.6rem}
-  figure img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;border-radius:6px;background:var(--deep-2)}
+  figure img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;border-radius:6px;background:var(--deep-2);border:1px solid var(--deep-rule)}
   figcaption{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--on-deep-3)}
   .light figcaption,.white figcaption{color:var(--ink-3)}
 
+  /* navy band (table + numbers) */
+  .band.navy{background:var(--navy);color:var(--on-navy)}
+  .band.navy h2{color:var(--on-navy)}
+  .band.navy p{color:var(--on-navy-2)}
+  .band.navy .tablewrap{border-color:var(--navy-rule);background:var(--navy-2)}
+  .band.navy th,.band.navy td{border-color:var(--navy-rule)}
+  .band.navy thead th{background:var(--navy);color:var(--on-navy)}
+  .band.navy tbody th{color:var(--aqua)}
+  .band.navy td{color:var(--on-navy-2)}
+  .band.navy td.hot{color:var(--citrus)}
+  .band.navy .num{border-top-color:var(--citrus)}
+  .band.navy .num b{color:var(--on-navy)}
+  .band.navy .num span{color:var(--on-navy-2)}
   /* table */
   .tablewrap{overflow-x:auto;border-radius:6px;border:1px solid var(--deep-rule);background:var(--deep-2);margin-top:1.75rem}
   table{border-collapse:collapse;width:100%;min-width:680px;font-size:1rem}
   th,td{text-align:left;vertical-align:top;padding:1rem 1.1rem;border-bottom:1px solid var(--deep-rule)}
   thead th{font-family:var(--display);font-size:.85rem;font-weight:600;color:var(--on-deep);background:var(--deep)}
-  tbody th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--aqua);white-space:nowrap;font-weight:500}
+  tbody th{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ocean);white-space:nowrap;font-weight:500}
   tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
   td{color:var(--on-deep-2)}
-  td.hot{color:var(--citrus);font-weight:600}
+  td.hot{color:var(--coral);font-weight:600}
 
   /* numbers */
   .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.75rem}
-  .num{border-top:2px solid var(--citrus);padding-top:1rem;display:flex;flex-direction:column;gap:.35rem}
+  .num{border-top:2px solid var(--coral);padding-top:1rem;display:flex;flex-direction:column;gap:.35rem}
   .num b{font-family:var(--display);font-size:2.2rem;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1;color:var(--on-deep)}
   .num span{color:var(--on-deep-2);font-size:1rem}
 
@@ -101,8 +115,8 @@
   @media print{
     @page{size:letter;margin:.6in}
     body{background:#fff;font-size:11pt;color:var(--ink)}
-    .band,.band.deep{background:#fff!important;color:var(--ink)!important;padding:1.2rem 0}
-    .band.deep p,.kv dd,td,.num span,.lede,.phase h3,.num b,thead th{color:var(--ink)!important}
+    .band,.band.deep,.band.navy{background:#fff!important;color:var(--ink)!important;padding:1.2rem 0}
+    .band.deep p,.band.navy p,.band.navy h2,.kv dd,td,.num span,.lede,.phase h3,.num b,thead th{color:var(--ink)!important}
     .band.deep .mono,tbody th,.kv dt,figcaption,.meta{color:var(--ocean)!important}
     .topbar,.phase,.kv,.tablewrap,th,td,footer{border-color:#ccc!important}
     .logo{padding:0;background:none}
@@ -259,7 +273,7 @@
   </div>
 </section>
 
-<section class="band deep" style="padding-top:0">
+<section class="band navy">
   <div class="wrap">
     <h2>Two tracks, one day</h2>
     <div class="tablewrap">
