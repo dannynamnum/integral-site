@@ -6,102 +6,124 @@
 <meta name="robots" content="noindex, nofollow">
 <title>How I launch a community</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    --paper:#f7f5ef; --card:#fffdf8; --ink:#14202b; --ink-2:#2c3a46; --ink-3:#5f6b75;
-    --rule:#ddd8c9; --teal:#0b6b62; --teal-soft:#e3ece9; --sage:#c9d6d1;
-    --display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
-    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --deep:#003049; --deep-2:#0a4260; --deep-rule:#1f5674;
+    --light:#f4f9fb; --white:#ffffff; --light-rule:#d6e3ea;
+    --ink:#0b1f2a; --ink-2:#33454f; --ink-3:#5d6f7a;
+    --on-deep:#f4f9fb; --on-deep-2:#c6dbe6; --on-deep-3:#8fb0c3;
+    --aqua:#48cae4; --ocean:#0077b6; --citrus:#ffb703;
+    --display:"Sora","Helvetica Neue",Arial,sans-serif;
+    --body:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
   *{box-sizing:border-box}
   html{color-scheme:light}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--teal)}
-  .wrap{max-width:60rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
-  @media(min-width:900px){.wrap{padding-top:3.5rem}}
-
-  .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
-  h1,h2,h3{font-family:var(--display);letter-spacing:-.015em;line-height:1.1;margin:0;text-wrap:balance}
-  h1{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:700}
-  h2{font-size:clamp(1.5rem,3.2vw,2rem);font-weight:700}
-  h3{font-size:1.15rem;font-weight:700}
+  body{margin:0;background:var(--deep);color:var(--on-deep);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
   p{margin:0}
-  .lede{font-size:1.2rem;line-height:1.5;color:var(--ink-2);max-width:38em}
+  h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;text-wrap:balance}
+  h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:700;letter-spacing:-.01em}
+  h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:700}
+  h3{font-size:1.2rem;font-weight:600}
+  .wrap{max-width:64rem;margin:0 auto;padding:0 1.25rem}
+  .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
 
-  header.top{display:flex;flex-direction:column;gap:1.25rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
-  .topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-  .topbar img{height:34px;width:auto;display:block}
-  .topbar .meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--ink-3);display:flex;gap:1.25rem;flex-wrap:wrap}
-  .topbar .meta a{color:var(--ink-3);text-decoration:none;border-bottom:1px solid var(--rule)}
-  .title{display:flex;flex-direction:column;gap:.9rem;padding-top:.5rem}
+  /* bands */
+  .band{padding:3.5rem 0}
+  .band.deep{background:var(--deep);color:var(--on-deep)}
+  .band.deep .mono{color:var(--aqua)}
+  .band.deep p{color:var(--on-deep-2)}
+  .band.deep .rule{border-color:var(--deep-rule)}
+  .band.light{background:var(--light);color:var(--ink)}
+  .band.light .mono{color:var(--ocean)}
+  .band.light p{color:var(--ink-2)}
+  .band.light .rule{border-color:var(--light-rule)}
+  .band.white{background:var(--white);color:var(--ink)}
+  .band.white .mono{color:var(--ocean)}
+  .band.white p{color:var(--ink-2)}
+  .band.white .rule{border-color:var(--light-rule)}
 
-  section{padding:3rem 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:1.4rem}
-  section:last-of-type{border-bottom:0}
-  .prose{max-width:38em;display:flex;flex-direction:column;gap:.9rem;color:var(--ink-2)}
-  .prose b{color:var(--ink);font-weight:600}
+  /* header */
+  .top{padding:1.5rem 0 3rem}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-bottom:1.5rem;border-bottom:1px solid var(--deep-rule)}
+  .logo{height:34px;width:auto;display:block;background:#fff;padding:6px 10px;border-radius:4px}
+  .meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--on-deep-3);display:flex;gap:1.25rem;flex-wrap:wrap}
+  .meta a{color:var(--aqua);text-decoration:none;border-bottom:1px solid currentColor}
+  .title{display:flex;flex-direction:column;gap:1rem;padding-top:2.5rem;max-width:44rem}
+  .lede{font-size:1.3rem;line-height:1.45;color:var(--on-deep-2)}
+  .prose{max-width:40em;display:flex;flex-direction:column;gap:1rem}
 
-  /* phase */
-  .phase{display:grid;grid-template-columns:1fr;gap:1.4rem;padding:2rem 0;border-top:1px solid var(--rule)}
+  /* phases */
+  .phase{display:grid;grid-template-columns:1fr;gap:1.5rem;padding:2.5rem 0;border-top:1px solid var(--deep-rule)}
   .phase:first-of-type{border-top:0;padding-top:0}
-  @media(min-width:860px){.phase{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2.5rem;align-items:start}}
-  .phase .text{display:flex;flex-direction:column;gap:.9rem}
-  .phase .text .mono{margin-bottom:-.3rem}
-  .phase .text p{color:var(--ink-2)}
-  .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.95rem;margin-top:.4rem}
-  .kv dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding-top:.25rem}
-  .kv dd{margin:0;color:var(--ink-2)}
-  figure{margin:0;display:flex;flex-direction:column;gap:.55rem}
-  figure img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;border:1px solid var(--rule);background:var(--sage)}
-  figcaption{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-3)}
+  @media(min-width:860px){.phase{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3rem;align-items:start}}
+  .phase .text{display:flex;flex-direction:column;gap:1rem}
+  .phase h3{font-size:1.5rem;font-weight:700;color:var(--on-deep)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.25rem;font-size:1rem;margin-top:.5rem;padding-top:1rem;border-top:1px solid var(--deep-rule)}
+  .kv dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-3);padding-top:.3rem}
+  .kv dd{margin:0;color:var(--on-deep-2)}
+  figure{margin:0;display:flex;flex-direction:column;gap:.6rem}
+  figure img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;border-radius:6px;background:var(--deep-2)}
+  figcaption{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--on-deep-3)}
+  .light figcaption,.white figcaption{color:var(--ink-3)}
 
   /* table */
-  .tablewrap{overflow-x:auto;border:1px solid var(--rule);background:var(--card)}
-  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.95rem}
-  th,td{text-align:left;vertical-align:top;padding:.85rem 1rem;border-bottom:1px solid var(--rule)}
-  thead th{font-family:var(--display);font-size:.85rem;letter-spacing:.02em;background:var(--teal-soft);color:var(--ink)}
-  tbody th{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);white-space:nowrap;font-weight:500}
+  .tablewrap{overflow-x:auto;border-radius:6px;border:1px solid var(--deep-rule);background:var(--deep-2);margin-top:1.75rem}
+  table{border-collapse:collapse;width:100%;min-width:680px;font-size:1rem}
+  th,td{text-align:left;vertical-align:top;padding:1rem 1.1rem;border-bottom:1px solid var(--deep-rule)}
+  thead th{font-family:var(--display);font-size:.85rem;font-weight:600;color:var(--on-deep);background:var(--deep)}
+  tbody th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--aqua);white-space:nowrap;font-weight:500}
   tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
-  td{color:var(--ink-2)}
+  td{color:var(--on-deep-2)}
+  td.hot{color:var(--citrus);font-weight:600}
 
   /* numbers */
-  .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-  .num{background:var(--card);padding:1.25rem 1.25rem 1.1rem;display:flex;flex-direction:column;gap:.35rem}
-  .num b{font-family:var(--display);font-size:1.9rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
-  .num span{color:var(--ink-3);font-size:.92rem}
+  .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.75rem}
+  .num{border-top:2px solid var(--citrus);padding-top:1rem;display:flex;flex-direction:column;gap:.35rem}
+  .num b{font-family:var(--display);font-size:2.2rem;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1;color:var(--on-deep)}
+  .num span{color:var(--on-deep-2);font-size:1rem}
 
   /* examples */
-  .examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
-  .ex{display:flex;flex-direction:column;gap:.6rem}
-  .ex p{color:var(--ink-2);font-size:.95rem}
+  .examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:1.75rem}
+  .ex{display:flex;flex-direction:column;gap:.75rem}
+  .ex figure img{border:1px solid var(--light-rule);background:var(--white)}
+  .ex h3{color:var(--ink)}
+  .ex p{font-size:1rem}
 
-  .callout{background:var(--teal-soft);border-left:3px solid var(--teal);padding:1.1rem 1.25rem;max-width:44em}
-  .callout p{color:var(--ink)}
+  .callout{background:var(--white);border:1px solid var(--light-rule);border-radius:6px;padding:1.5rem 1.75rem;max-width:46em;margin-top:1.5rem}
+  .callout p{font-size:1.15rem;color:var(--ink)}
 
-  footer{padding-top:2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;color:var(--ink-3);font-size:.9rem}
-  footer img{height:28px;width:auto;display:block;opacity:.9}
+  footer{padding:2rem 0 3rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;color:var(--ink-3);font-size:.95rem;border-top:1px solid var(--light-rule)}
+  footer img{height:28px;width:auto;display:block}
 
   @media print{
     @page{size:letter;margin:.6in}
-    body{background:#fff;font-size:11pt}
+    body{background:#fff;font-size:11pt;color:var(--ink)}
+    .band,.band.deep{background:#fff!important;color:var(--ink)!important;padding:1.2rem 0}
+    .band.deep p,.kv dd,td,.num span,.lede,.phase h3,.num b,thead th{color:var(--ink)!important}
+    .band.deep .mono,tbody th,.kv dt,figcaption,.meta{color:var(--ocean)!important}
+    .topbar,.phase,.kv,.tablewrap,th,td,footer{border-color:#ccc!important}
+    .logo{padding:0;background:none}
+    .meta a[href$=".pdf"]{display:none}
     .wrap{max-width:none;padding:0}
-    .topbar .meta a[href$=".pdf"]{display:none}
-    section{page-break-inside:avoid;padding:1.4rem 0}
     .phase{page-break-inside:avoid;grid-template-columns:1fr 1fr;gap:1.2rem}
-    figure img{border:1px solid #ccc}
-    .tablewrap{overflow:visible;border-color:#ccc}
+    figure img{border:1px solid #ccc;border-radius:0}
+    .tablewrap{overflow:visible;background:none;border-radius:0}
+    thead th{background:none}
     table{min-width:0}
+    .callout{border-color:#ccc}
     a{color:inherit;text-decoration:none}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="top">
+<header class="band deep top">
+  <div class="wrap">
     <div class="topbar">
-      <img src="assets/logo.png" alt="Namnum Design Co.">
+      <img class="logo" src="assets/logo.png" alt="Namnum Design Co.">
       <div class="meta">
         <span>Prepared for Integral Florida</span>
         <span>October 2026</span>
@@ -113,17 +135,21 @@
       <h1>How I launch a community</h1>
       <p class="lede">Most projects start marketing when the building is done. On every community I launched, it started the day the concept existed, and the doors opened to a line.</p>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section>
+<section class="band deep" style="padding-top:0">
+  <div class="wrap">
     <div class="prose">
       <p>For ten years at GL Homes I launched communities before they existed: master plans in Port St. Lucie, a town center that wasn't built yet, neighborhoods that were a rendering and a dirt road. Over a dozen of them, start to finish.</p>
       <p>They all went through the same three phases. What we showed people and what we told them changed at each one, and every piece of it pointed at one day.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Three phases, then it's live</h2>
+<section class="band deep" style="padding-top:0">
+  <div class="wrap">
+    <h2 style="margin-bottom:2.5rem">Three phases, then it's live</h2>
 
     <article class="phase">
       <div class="text">
@@ -138,8 +164,25 @@
         </dl>
       </div>
       <figure>
-        <img src="assets/agave-pre-launch.jpg" alt="Agave Boca coming-soon page: rendering, 'Coming 2027', and an interest-list form">
-        <figcaption>Agave Boca · pre-launch · glhomes.com, Sept 2026</figcaption>
+        <img src="assets/agave-pre-launch.jpg" alt="Agave Boca coming-soon page: rendering, 'Coming 2027', insider-access form, location and lifestyle sections">
+        <figcaption>Agave Boca · community page, pre-launch · glhomes.com, Sept 2026</figcaption>
+      </figure>
+    </article>
+
+    <article class="phase">
+      <div class="text">
+        <div class="mono">Phase 1, continued</div>
+        <h3>The lifestyle page</h3>
+        <p>Before a single floor plan exists, the amenities do. The clubhouse, the pools, the courts, the social calendar. This page is where a sign-up turns into someone who can picture living there.</p>
+        <p>It's also the page the list keeps coming back to as the renderings turn into photographs.</p>
+        <dl class="kv">
+          <dt>Triggered by</dt><dd>The amenity plans</dd>
+          <dt>The page shows</dt><dd>Clubhouse, pools, courts, the plan of it all</dd>
+        </dl>
+      </div>
+      <figure>
+        <img src="assets/valencia-lifestyle.jpg" alt="Valencia Vista lifestyle page: clubhouse rendering and the social club site plan with resort pools">
+        <figcaption>Valencia Vista at Riverland · lifestyle page · glhomes.com</figcaption>
       </figure>
     </article>
 
@@ -147,7 +190,7 @@
       <div class="text">
         <div class="mono">Phase 2</div>
         <h3>Launch</h3>
-        <p>The plans are approved. Floor plans go up: renderings, beds and baths, one story or two. Price still reads "coming soon." Now the site has product.</p>
+        <p>The plans are approved. Floor plans go up: renderings, beds and baths, one story or two. Price reads "coming soon" until the day it doesn't. Now the site has product.</p>
         <p>The list gets the plan releases and plan highlights, and then the push. The grand opening goes on the community page, on the homepage, and out to every list we have.</p>
         <dl class="kv">
           <dt>Triggered by</dt><dd>Approved plans</dd>
@@ -156,8 +199,8 @@
         </dl>
       </div>
       <figure>
-        <img src="assets/valencia-plans.jpg" alt="Valencia Vista plans page: six collections with renderings, specs and build-from prices">
-        <figcaption>Valencia Vista at Riverland · plans · glhomes.com</figcaption>
+        <img src="assets/valencia-plans.jpg" alt="Valencia Vista plans page: a collection of five floor plans with renderings and specs">
+        <figcaption>Valencia Vista at Riverland · plans page, shown after opening with prices on · glhomes.com</figcaption>
       </figure>
     </article>
 
@@ -174,8 +217,8 @@
         </dl>
       </div>
       <figure>
-        <img src="assets/valencia-now-open.jpg" alt="Valencia Vista 'Now Open' community page with priced collections and a completed home">
-        <figcaption>Valencia Vista at Riverland · now open · glhomes.com</figcaption>
+        <img src="assets/valencia-now-open.jpg" alt="Valencia Vista community page after opening: 'Now Open' photograph, lifestyle section, new floor plans">
+        <figcaption>Valencia Vista at Riverland · community page, now open · glhomes.com</figcaption>
       </figure>
     </article>
 
@@ -192,8 +235,8 @@
         </dl>
       </div>
       <figure>
-        <img src="assets/valencia-lifestyle.jpg" alt="Valencia Vista lifestyle page: social club floor plan with resort pools and a 'Stay and Play' offer">
-        <figcaption>Valencia Vista at Riverland · lifestyle · glhomes.com</figcaption>
+        <img src="assets/valencia-live.jpg" alt="Valencia Vista community page, lower sections: closing-cost offer, community updates, 'Stay and Play' try-before-you-buy, visit today">
+        <figcaption>Valencia Vista at Riverland · same page, further down: offers, updates, visit · glhomes.com</figcaption>
       </figure>
     </article>
 
@@ -209,13 +252,15 @@
         </dl>
       </div>
       <figure>
-        <img src="assets/calusa-phase-zero.jpg" alt="Calusa Development Facts: 'Positive change for local residents' section on a stakeholder site for a Kendall community">
-        <figcaption>Calusa Development Facts · phase zero · Kendall, Miami-Dade, Sept 2026</figcaption>
+        <img src="assets/calusa-phase-zero.jpg" alt="Calusa Development Facts: introducing the community, a grand entrance, positive change for local residents">
+        <figcaption>Calusa Development Facts · stakeholder site · Kendall, Miami-Dade, Sept 2026</figcaption>
       </figure>
     </article>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band deep" style="padding-top:0">
+  <div class="wrap">
     <h2>Two tracks, one day</h2>
     <div class="tablewrap">
       <table>
@@ -223,30 +268,29 @@
           <tr><th></th><th>Pre-launch</th><th>Launch</th><th>Grand opening</th><th>Live</th></tr>
         </thead>
         <tbody>
-          <tr><th>The page shows</th><td>Community, lifestyle, sign-up</td><td>Floor plans, "coming soon"</td><td>Photos, prices, lots</td><td>Availability, offers, news</td></tr>
-          <tr><th>The list hears</th><td>Weekly progress</td><td>Plans, highlights, the push</td><td>The event</td><td>Releases, changes, completions</td></tr>
+          <tr><th>The page shows</th><td>Community, lifestyle, sign-up</td><td>Floor plans, "coming soon"</td><td class="hot">Photos, prices, lots</td><td>Availability, offers, news</td></tr>
+          <tr><th>The list hears</th><td>Weekly progress</td><td>Plans, highlights, the push</td><td class="hot">The event</td><td>Releases, changes, completions</td></tr>
           <tr><th>Triggered by</th><td>Concept and amenity plans</td><td>Approved plans</td><td>Built models</td><td>Open doors</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="prose"><p>The page grows and the list grows with it. Every step is triggered by something the project produces anyway: a concept, a set of plans, a finished model, an open door. Nothing has to be invented for marketing's sake.</p></div>
-  </section>
+    <p style="max-width:40em;margin-top:1.5rem">The page grows and the list grows with it. Every step is triggered by something the project produces anyway: a concept, a set of plans, a finished model, an open door. Nothing has to be invented for marketing's sake.</p>
 
-  <section>
-    <h2>What it did</h2>
     <div class="nums">
       <div class="num"><b>1,200 to 7,000</b><span>people on the interest list before opening, hearing from us every week</span></div>
       <div class="num"><b>~300</b><span>people on grand opening morning</span></div>
       <div class="num"><b>2 to 3 years</b><span>to sell out a Riverland community; up to five in Boca</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band light">
+  <div class="wrap">
     <h2>Where the examples sit</h2>
     <div class="examples">
       <div class="ex">
         <figure>
-          <img src="assets/radius.jpg" alt="Radius at Sawgrass: campus rendering with the headline 'A unique campus-style opportunity'">
+          <img src="assets/radius.jpg" alt="Radius at Sawgrass: campus rendering, 'Now Leasing', the opportunity, location and commute times">
           <figcaption>Radius at Sawgrass · GL Commercial</figcaption>
         </figure>
         <h3>One reader</h3>
@@ -254,27 +298,28 @@
       </div>
       <div class="ex">
         <figure>
-          <img src="assets/coming-soon-index.jpg" alt="GL Homes 'New communities coming soon' page with an interest-list form">
+          <img src="assets/coming-soon-index.jpg" alt="GL Homes 'New communities coming soon' page with an interest-list form and the next communities listed">
           <figcaption>Coming Soon · glhomes.com</figcaption>
         </figure>
         <h3>The whole cycle, repeated</h3>
         <p>Riverland is one master plan with a new sub-community every year or two, each running phases one through three. The coming-soon page is where every one of them starts.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
+<section class="band white" style="padding-top:2.5rem">
+  <div class="wrap">
     <h2>Yaeger Plaza</h2>
     <div class="callout">
       <p>Yaeger is in phase one, with about fourteen months until the doors open. The story so far has been told to the county, the city and Liberty City, and told well. Where it goes from here, and who it needs to reach next, is what I'd like to work out with you.</p>
     </div>
-  </section>
+    <footer>
+      <img src="assets/logo.png" alt="Namnum Design Co.">
+      <span>Danny Namnum · danny@namnum.net · 954-274-5153</span>
+    </footer>
+  </div>
+</section>
 
-  <footer>
-    <img src="assets/logo.png" alt="Namnum Design Co.">
-    <span>Danny Namnum · danny@namnum.net · 954-274-5153</span>
-  </footer>
-
-</div>
 </body>
 </html>
